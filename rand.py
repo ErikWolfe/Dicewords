@@ -6,8 +6,7 @@ from random import SystemRandom
 count = raw_input("How many sets of numbers? ")
 groups = []
 
-#======================================
-
+#==================================================================
 # Retrieves a Securely Random number.
 def get_rand():
     n = SystemRandom().getrandbits(3)
@@ -18,9 +17,7 @@ def get_rand():
         n -= 1
     
     return n
-
-#======================================
-
+#==================================================================
 # Grabbing $count sets of numbers
 def random_numbers(count):
 
@@ -47,10 +44,17 @@ def random_numbers(count):
     else:
         count = raw_input("Please enter a number: ")
         random_numbers(count)
-#======================================
+#==================================================================
 
 # Perform the "random_numbers" function $count number of times.
 random_numbers(count) 
 
 # Print out the groups of numbers.
 print groups 
+
+#==================================================================
+# Destroy the "evidence".
+groups = []
+numbers = []
+values = ""
+count = -1
