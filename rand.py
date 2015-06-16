@@ -1,6 +1,9 @@
-""" This is an example of the Random Number Generation process
-    Which I am hoping to replicate in the Java code. """
+""" 
+This is an example of the Random Number Generation process
+Which I am hoping to replicate in the Java code. 
+"""
 
+#==================================================================
 from random import SystemRandom
 
 count = raw_input("How many sets of numbers? ")
@@ -17,6 +20,7 @@ def get_rand():
         n -= 1
     
     return n
+
 #==================================================================
 # Grabbing $count sets of numbers
 def random_numbers(count):
@@ -44,8 +48,8 @@ def random_numbers(count):
     else:
         count = raw_input("Please enter a number: ")
         random_numbers(count)
-#==================================================================
 
+#==================================================================
 # Perform the "random_numbers" function $count number of times.
 random_numbers(count) 
 
