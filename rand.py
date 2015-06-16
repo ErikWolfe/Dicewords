@@ -3,10 +3,12 @@
 
 from random import SystemRandom
 
-values = ""
-numbers = []
+count = raw_input("How many sets of numbers? ")
+groups = []
 
-# Retrieve a Securely Random number.
+#======================================
+
+# Retrieves a Securely Random number.
 def get_rand():
     n = SystemRandom().getrandbits(3)
 
@@ -17,16 +19,38 @@ def get_rand():
     
     return n
 
+#======================================
 
-# Fill the list "numbers".
-for i in range(5):
-    numbers.append(get_rand())
+# Grabbing $count sets of numbers
+def random_numbers(count):
 
+    numbers = []
 
-# Concatenate the items in "numbers" into a single string.
-for number in numbers:
-    values += str(number) 
+    # Check for integer values & intelligent count size.
+    if (count.isdigit() and int(count) > 0):
 
+        for i in range(0, int(count)):
+            values = ""
 
-# Print the values to the console.
-print values 
+            # Fill the list "numbers".
+            for i in range(5):
+                numbers.append(get_rand())
+
+            # Concatenate the items in "numbers" into a single string.
+            for number in numbers:
+                values += str(number) 
+
+            # Reset "numbers" and append "values" to the "groups" list.
+            numbers = []
+            groups.append(values)
+
+    else:
+        count = raw_input("Please enter a number: ")
+        random_numbers(count)
+#======================================
+
+# Perform the "random_numbers" function $count number of times.
+random_numbers(count) 
+
+# Print out the groups of numbers.
+print groups 
